@@ -1,0 +1,88 @@
+/******** Header **********/
+
+.header {
+  border: 1px solid black;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.image {
+  width: 140px;
+}
+.nav-items > ul {
+  display: flex;
+}
+.nav-items > ul > li {
+  list-style-type: none;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.login {
+  border: 1px solid black;
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 10px;
+}
+/******** ResCards **********/
+
+.res-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.card-container {
+  width: 200px;
+  background-color: "#f0f0f0";
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+.card-img {
+  width: 200px;
+  height: 200px;
+}
+.cuisines {
+  overflow-wrap: break-word;
+  width: 200px;
+}
+
+/********ShimmerUi**********/
+
+.shimmerbox {
+  height: 300;
+  width: 200;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+}
+
+.shimmerimgbox {
+  width: 200px;
+  height: 100px;
+  margin: 5px 0;
+  background-color: "#f0f0f0" !important;
+}
+.shimmerresname {
+  padding: 5px;
+  width: 170px;
+  height: 40px;
+  margin: 5px 0;
+  background-color: "#f0f0f0";
+}
+
+.shimmerrating {
+  width: 120px;
+  height: 40px;
+  margin: 5px 0;
+  background-color: gray;
+}
+
+.shimmercuisines {
+  width: 190px;
+  height: 40px;
+  margin: 5px 0;
+  background-color: gray;
+}

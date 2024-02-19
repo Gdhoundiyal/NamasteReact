@@ -1,0 +1,30 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "This is Namaste React by Akshay saini.",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel Index.html",
+    "build": "parcel build Index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gdhoundiyal/NamasteReact.git"
+  },
+  "keywords": [],
+  "author": "Girish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gdhoundiyal/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/Gdhoundiyal/NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
