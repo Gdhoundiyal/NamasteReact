@@ -12,17 +12,24 @@
 .nav-items > ul {
   display: flex;
 }
-.nav-items > ul > li {
+.nav-items > ul > Link,
+li {
   list-style-type: none;
   padding: 20px;
   font-size: 20px;
+}
+.nav-items > ul > a {
+  padding: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
 }
 
 .login {
   border: 1px solid black;
   margin-right: 5px;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 15px;
 }
 /******** ResCards **********/
 

@@ -3,7 +3,9 @@ import { resList } from "../../utils/Data";
 import Rescards from "./Rescards";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
+import RestaurentMenu from "./RestaurentMeuu";
+import { RES_DATA } from "../../utils/constants";
 const Body = () => {
   const [cards, setcards] = useState(null);
   const [searchvalue, setsearchvalue] = useState([]);
@@ -11,9 +13,7 @@ const Body = () => {
   const [resData, setresData] = useState([]);
 
   const getData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RES_DATA);
     const response = await data.json();
     const resdata =
       response.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -61,7 +61,9 @@ const Body = () => {
       </div>
       <div className="res-cards">
         {resData.map((rescard) => (
-          <Rescards key={rescard?.info?.id} cards={rescard} />
+          <Link to={`/restaurent/${rescard.info.id}`} key={rescard?.info?.id}>
+            <Rescards cards={rescard} />
+          </Link>
         ))}
       </div>
     </div>

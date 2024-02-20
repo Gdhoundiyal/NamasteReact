@@ -1,6 +1,7 @@
 {
   "name": "namastereact",
   "version": "1.0.0",
+  "proxy": "http://localhost:8080",
   "description": "This is Namaste React by Akshay saini.",
   "main": "App.js",
   "scripts": {
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1"
   }
 }
