@@ -54,3 +54,14 @@ react virtual is a representation of actual dom
 
 - whenever state variable changes component Rerendered .
 - first the component is rendered and then useEffect is called
+
+# class based component( with LifeCycle Methods)
+
+- firstly constructor is called ==>> then render is called ==>> then ComponentDidMount is called ==> then render is called with updated
+  data ==> then componentDidUpdate is called ==> at last ComponentWillUnmount is called
+
+- ComponentDidMount is used to make an api call beacuse it is called after the function is rendered properly
+
+# Chunking / code spliting / dynamic bundling / lazy loading
+
+in this we split our code in many JS file so that browser take less time to displaying things in ui. we use laxy() to do this

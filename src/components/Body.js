@@ -1,25 +1,21 @@
 import React from "react";
-import { resList } from "../../utils/Data";
 import Rescards from "./Rescards";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import RestaurentMenu from "./RestaurentMeuu";
-import { RES_DATA } from "../../utils/constants";
+import useRestaurentData from "../../utils/useRestaurentData";
+import useStatus from "../../utils/useStatus";
+
 const Body = () => {
   const [cards, setcards] = useState(null);
   const [searchvalue, setsearchvalue] = useState([]);
   const [inputText, setinputText] = useState("");
   const [resData, setresData] = useState([]);
+  const response = useRestaurentData();
 
-  const getData = async () => {
-    const data = await fetch(RES_DATA);
-    const response = await data.json();
-    const resdata =
-      response.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setcards(resdata);
-    setresData(resdata);
+  const getData = () => {
+    setcards(response);
+    setresData(response);
   };
 
   const SearchItem = () => {
@@ -32,7 +28,14 @@ const Body = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [response]);
+
+  const status = useStatus();
+  console.log("sssssssss", status);
+  if (status === false) {
+    console.log(status);
+    return <h1>Looks like Your Internat is not working Please Check !!</h1>;
+  }
 
   return cards ? (
     <div style={{ marginTop: "10px" }}>
