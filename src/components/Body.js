@@ -64,9 +64,9 @@ const Body = () => {
       </div>
       <div className="res-cards">
         {resData.map((rescard) => (
-          <Link to={`/restaurent/${rescard.info.id}`} key={rescard?.info?.id}>
-            <Rescards cards={rescard} />
-          </Link>
+          // <Link to={`/restaurent/${rescard.info.id}`} key={rescard?.info?.id}>
+          <Rescards cards={rescard} />
+          // </Link>
         ))}
       </div>
     </div>

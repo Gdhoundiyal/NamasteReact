@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { webLogo } from "../../utils/constants";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -13,25 +12,46 @@ const Header = () => {
     }
   };
   return (
-    <div className="header">
+    <div className="flex justify-between items-center h-auto px-6 py-0 border border-solid bg-Secondary shadow-xl">
       <div className="logo-contianer">
-        <img className="image" src={webLogo} />
+        <img
+          className="w-36 h-28"
+          src={require("../../utils/food_logo.png")}
+          alt="an image of food "
+        />
       </div>
-      <div className="nav-items">
-        <ul>
-          <Link to={"/"}>Home</Link>
-          <Link to={"aboutus"}>About us</Link>
-          <Link to={"contact"}>Contact us</Link>
-          <li>Services</li>
-          <li>Cart</li>
-          <li
-            className="login"
-            onClick={() => {
-              Togglebtn();
-            }}>
-            {loginBtn}
-          </li>
+      <div className="">
+        <ul className=" flex gap-8">
+          <Link className="font-rubik text-[1.2rem] font-[400]" to={"/"}>
+            Home
+          </Link>
+          <Link className="font-rubik text-[1.2rem] font-[400]" to={"aboutus"}>
+            About us
+          </Link>
+          <Link className="font-rubik text-[1.2rem] font-[400]" to={"services"}>
+            Services
+          </Link>
+          <Link
+            className="font-rubik text-[1.2rem] font-[400]"
+            to={"testimonial"}>
+            Testimonials
+          </Link>
+          <Link className="font-rubik text-[1.2rem] font-[400]" to={"contact"}>
+            Contact us
+          </Link>
         </ul>
+      </div>
+      <div className="flex gap-4 items-center ">
+        <div
+          className="font-rubik text-[1.2rem] font-[400] "
+          onClick={() => {
+            Togglebtn();
+          }}>
+          {loginBtn}
+        </div>
+        <div className="font-rubik text-[1.2rem] font-[400] bg-Primary  text-white px-5 py-3 rounded-md ">
+          Register
+        </div>
       </div>
     </div>
   );

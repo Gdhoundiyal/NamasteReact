@@ -10,8 +10,9 @@ const RestaurentMenu = () => {
     return <Shimmer />;
   }
 
+  console.log(restaurentData);
   const { name, avgRating, cuisines, areaName } =
-    restaurentData.data.cards[2].card.card.info;
+    restaurentData.data.cards[0].card.card.info;
 
   return (
     <div>
