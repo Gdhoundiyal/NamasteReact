@@ -2,9 +2,9 @@ import React from "react";
 import Rescards from "./Rescards";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
 import useRestaurentData from "../../utils/useRestaurentData";
 import useStatus from "../../utils/useStatus";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [cards, setcards] = useState(null);
@@ -19,7 +19,7 @@ const Body = () => {
   };
 
   const SearchItem = () => {
-    console.log("cardname", cards, cards[2]?.info?.name);
+    // console.log("cardname", cards, cards[2]?.info?.name);
     const filtervalue = cards.filter((res) =>
       res?.info?.name.toLowerCase().includes(searchvalue.toLowerCase())
     );
@@ -31,23 +31,17 @@ const Body = () => {
   }, [response]);
 
   const status = useStatus();
-  console.log("sssssssss", status);
+  // console.log("sssssssss", status);
   if (status === false) {
-    console.log(status);
+    // console.log(status);
     return <h1>Looks like Your Internat is not working Please Check !!</h1>;
   }
 
   return cards ? (
-    <div style={{ marginTop: "10px" }}>
-      <div>
-        <button
-          onClick={() => {
-            let filterData = cards.filter((res) => res.info.avgRating > 4.2);
-            setcards(filterData);
-          }}>
-          Top Rated Restaurents{" "}
-        </button>
+    <div className="">
+      <div className="m-5">
         <input
+          className="border rounded-lg "
           placeholder="Search Restaurents"
           value={inputText}
           onChange={(e) => {
@@ -61,22 +55,38 @@ const Body = () => {
           }}>
           search
         </button>
+        <button
+          onClick={() => {
+            console.log("clicked");
+            let filterData = cards.filter((res) => res.info.avgRating > 4);
+            setcards(filterData);
+            setresData(filterData);
+          }}>
+          Top Rated Restaurents{" "}
+        </button>
       </div>
-      <div className="res-cards">
+      <div className="flex flex-wrap ">
         {resData.map((rescard) => (
-          // <Link to={`/restaurent/${rescard.info.id}`} key={rescard?.info?.id}>
-          <Rescards cards={rescard} />
-          // </Link>
+          <Link to={`/restaurent/${rescard.info.id}`} key={rescard?.info?.id}>
+            <Rescards cards={rescard} />
+          </Link>
         ))}
       </div>
     </div>
   ) : (
-    <div className="res-cards">
+    <div className="flex flex-wrap">
       {[...Array(15)].map((index) => (
         <Shimmer key={index} />
       ))}
     </div>
   );
+  // return (
+  //   <div className="grid  grid-cols-5">
+  //     {[...Array(15)].map((index) => (
+  //       <Shimmer key={index} />
+  //     ))}
+  //   </div>
+  // );
 };
 
 export default Body;

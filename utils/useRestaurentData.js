@@ -11,8 +11,9 @@ const useRestaurentData = () => {
   const getData = async () => {
     const resdata = await fetch(RES_DATA);
     const data = await resdata.json();
+    console.log(data);
     setRestaurentData(
-      data.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      data.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 

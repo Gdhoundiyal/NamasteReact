@@ -25,6 +25,8 @@ module.exports = {
     colors: {
       Primary: "#ff4d30",
       Secondary: "#FFEDEA",
+      Green: "#008000",
+      border: "#878585",
       white: "#ffffff",
     },
   },
