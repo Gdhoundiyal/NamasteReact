@@ -28,6 +28,7 @@ module.exports = {
       Green: "#008000",
       border: "#878585",
       white: "#ffffff",
+      Background: "#EEF3F7",
     },
   },
   plugins: [],

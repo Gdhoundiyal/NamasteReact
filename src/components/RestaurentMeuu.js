@@ -1,33 +1,27 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import UseRestaurentMenu from "../../utils/useRestaurentMenu";
+import ItemInfo from "./ItmeInfo";
 
 const RestaurentMenu = () => {
   const { resId } = useParams();
   const restaurentData = UseRestaurentMenu(resId);
-  // console.log("restaurentData", restaurentData);
+  console.log("restaurentData", restaurentData);
 
   if (!restaurentData) {
     return <Shimmer />;
   }
+  const { name, avgRating, areaName, city } =
+    restaurentData.data.cards[2].card.card.info;
 
-  console.log("restaurentData", restaurentData);
-  const { name, avgRating, cuisines, areaName, city } =
-    restaurentData.data.cards[0].card.card.info;
-
-  const recommendedItem =
-    restaurentData?.data?.cards[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
-      ?.card?.card?.itemCards;
-  console.log("recommendedItem", recommendedItem);
-
-  // const offers =
-  //   restaurentData?.data?.cards[1]?.card.card.gridElements?.infoWithStyle
-  //     ?.offers;
-  // console.log(offers);
+  const offers =
+    restaurentData?.data?.cards[3]?.card.card.gridElements?.infoWithStyle
+      ?.offers;
+  console.log(offers);
 
   return (
     <div className="flex justify-center pt-10">
-      <div className="w-[30rem]">
+      <div className="w-[38rem] p-5">
         <div className="flex justify-between items-center">
           <div>
             <h1 className="  font-bold text-lg">{name}</h1>
@@ -43,15 +37,11 @@ const RestaurentMenu = () => {
         <p className="font-thin text-[15px]">
           Additional delivery fee will be apply
         </p>
-        <div className="flex gap-2 flex-row">
-          {/* {offers.map((offer) => {
-            return <div>{offer.info.header}</div>;
-          })} */}
-        </div>
+        <ItemInfo data={restaurentData} />
 
-        {cuisines.map((name) => (
+        {/* {cuisines.map((name) => (
           <p>{name}</p>
-        ))}
+        ))} */}
       </div>
     </div>
   );
