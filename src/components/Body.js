@@ -1,43 +1,40 @@
 import Rescards from "./Rescards";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import useRestaurentData from "../../utils/useRestaurentData";
 import useStatus from "../../utils/useStatus";
 import { Link } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
-import RestaurentMenu from "./RestaurentMeuu";
-import ItemInfo from "./ItmeInfo";
+import { ResData } from "../../utils/constants";
 
 const Body = () => {
   const [cards, setcards] = useState(null);
   const [searchvalue, setsearchvalue] = useState([]);
   const [inputText, setinputText] = useState("");
-  const [resData, setresData] = useState([]);
-  const response = useRestaurentData();
-  // console.log(response);
+  const [noData, setnoData] = useState(false);
 
   const getData = () => {
-    setcards(response);
-    setresData(response);
+    setcards(ResData);
   };
 
   const SearchItem = () => {
-    // console.log("cardname", cards, cards[2]?.info?.name);
     const filtervalue = cards.filter((res) =>
       res?.info?.name.toLowerCase().includes(searchvalue.toLowerCase())
     );
-    setresData(filtervalue);
+
+    if (!searchvalue == filtervalue) {
+      setnoData(true);
+    } else {
+      setnoData(false);
+    }
   };
 
   useEffect(() => {
     getData();
-  }, [response]);
-  console.log("sssssssss", cards);
+  }, []);
 
   const status = useStatus();
   if (status === false) {
-    // console.log(status);
     return <h1>Looks like Your Internat is not working Please Check !!</h1>;
   }
 
@@ -50,7 +47,7 @@ const Body = () => {
             console.log("clicked");
             let filterData = cards.filter((res) => res.info.avgRating > 4);
             setcards(filterData);
-            setresData(filterData);
+            // setresData(filterData);
           }}>
           Top Rated Restaurents{" "}
         </button>
@@ -75,11 +72,17 @@ const Body = () => {
         </span>
       </div>
       <div className="flex flex-wrap m-5">
-        {resData.map((rescard) => (
-          <Link to={`/restaurent/${rescard.info.id}`} key={rescard?.info?.id}>
-            <Rescards cards={rescard} />
-          </Link>
-        ))}
+        {noData ? (
+          <div className="  font-bold  text-xl ml-3">
+            No Match Found for {`"${searchvalue}"`}
+          </div>
+        ) : (
+          ResData.map((rescard) => (
+            <Link to={`/restaurent/${rescard.id}`} key={rescard?.id}>
+              <Rescards cards={rescard} key={rescard?.id} />
+            </Link>
+          ))
+        )}
       </div>
     </div>
   ) : (

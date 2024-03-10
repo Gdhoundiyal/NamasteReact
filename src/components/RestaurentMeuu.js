@@ -1,35 +1,29 @@
-import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import UseRestaurentMenu from "../../utils/useRestaurentMenu";
-import ItemInfo from "./ItmeInfo";
+import { ResData } from "../../utils/constants";
 
 const RestaurentMenu = () => {
   const { resId } = useParams();
-  const restaurentData = UseRestaurentMenu(resId);
-  console.log("restaurentData", restaurentData);
 
-  if (!restaurentData) {
-    return <Shimmer />;
-  }
-  const { name, avgRating, areaName, city } =
-    restaurentData.data.cards[2].card.card.info;
+  const DownClick = () => {
+    console.log("downCLicked");
+  };
 
-  const offers =
-    restaurentData?.data?.cards[3]?.card.card.gridElements?.infoWithStyle
-      ?.offers;
-  console.log(offers);
+  const itemvalues = ResData.filter((item) => item.id === resId);
+  console.log("itemvalues", itemvalues);
 
   return (
     <div className="flex justify-center pt-10">
       <div className="w-[38rem] p-5">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="  font-bold text-lg">{name}</h1>
-            <p className="font-thin mt-2 text-sm">{areaName + ", " + city}</p>
+            <h1 className="  font-bold text-lg">{itemvalues[0].name}</h1>
+            <p className="font-thin mt-2 text-sm">
+              {itemvalues[0].areaName + ", " + itemvalues[0].locality}
+            </p>
           </div>
           <div className="h-[4.5rem] w-[4.5rem] border-[0.5px] rounded-md flex flex-col justify-center items-center gap-2">
             <p className="text-[12] border-dashed	border-b pb-2  text-Green">
-              ☆ {avgRating}
+              ☆ {itemvalues[0].avgRating}
             </p>
             <p className=" text-[10px] ">1k+ Rating</p>
           </div>
@@ -37,11 +31,13 @@ const RestaurentMenu = () => {
         <p className="font-thin text-[15px]">
           Additional delivery fee will be apply
         </p>
-        <ItemInfo data={restaurentData} />
+        <div className="flex justify-center pt-5">
+          <div className="w-[38rem] ">
+            <div className=""></div>
+          </div>
+        </div>
 
-        {/* {cuisines.map((name) => (
-          <p>{name}</p>
-        ))} */}
+        {/* <ItemInfo data={restaurentData} /> */}
       </div>
     </div>
   );

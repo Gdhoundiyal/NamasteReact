@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { IoSearchOutline } from "react-icons/io5";
-import { IconContext } from "react-icons";
 
 const Header = () => {
   const [loginBtn, setloginBtn] = useState("Login");

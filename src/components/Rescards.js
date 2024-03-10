@@ -3,9 +3,9 @@ import { img_url } from "../../utils/constants";
 
 const Rescards = (props) => {
   const { cards } = props;
-  const { cloudinaryImageId, name, avgRating, cuisines } = cards?.info;
+  const { cloudinaryImageId, name, avgRating, cuisines } = cards;
 
-  // console.log(cards);
+  console.log(cards);
   let items = [];
   if (cuisines.length > 7) {
     items = cuisines.slice(1, 5);
