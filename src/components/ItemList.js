@@ -1,22 +1,41 @@
+import { useDispatch, useSelector } from "react-redux";
 import { img_url } from "../../utils/constants";
 import { ResCardData } from "../../utils/constants";
-
+import { addItem, totalPrize } from "../features/cartSlice";
 const ItemList = () => {
   const rescards = ResCardData;
+  const dispatch = useDispatch();
+
+  const addItems = (e) => {
+    // alert("Item added");
+    console.log(e);
+    dispatch(addItem(e));
+    dispatch(totalPrize());
+  };
 
   return (
-    <div>
+    <div className=" bg-Background1">
       {rescards.map((item) => {
         return (
-          <div className=" h-36   w-[36rem]  bg-Background   p-3  flex items-center">
+          <div className=" h-auto   w-[36rem]  bg-Background2 mt-1   p-2  flex items-center ">
             <div className=" w-[36rem]">
-              <div className="p-4 flex items-center justify-between mb-2">
+              <div className="p-3 flex items-center justify-between mb-2 relative">
                 <div className=" font-bold text-l border-b-border">
                   {item.name}
                 </div>
-                <img src={img_url + item.imageId} />
+                <div className="h-24 w-24 overflow-hidden bg-black rounded-xl  p-2">
+                  <img
+                    className="h-full w-full object-cover rounded-xl"
+                    src={img_url + item.imageId}
+                  />
+                </div>
+                <button
+                  className="absolute top-[6rem] right-9 text-m bg-border p-[5px]  rounded-lg text-white"
+                  onClick={() => addItems(item)}>
+                  Add+
+                </button>
               </div>
-              <div>{item.description}</div>
+              <div className="p-3 text-sm">{item.description}</div>
             </div>
           </div>
         );

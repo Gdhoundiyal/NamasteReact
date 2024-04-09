@@ -27,6 +27,8 @@ export const ResData = [
     costForTwo: "₹350 for two",
     cuisines: ["Pizzas"],
     avgRating: 3.9,
+    quantity: 0,
+    price: 200,
   },
   {
     id: "399525",
@@ -37,6 +39,8 @@ export const ResData = [
     costForTwo: "₹400 for two",
     cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
     avgRating: 3.9,
+    quantity: 0,
+    price: 190,
   },
   {
     id: "253765",
@@ -47,6 +51,8 @@ export const ResData = [
     costForTwo: "₹400 for two",
     cuisines: ["American"],
     avgRating: 4.2,
+    quantity: 0,
+    price: 270,
   },
   {
     id: "38925",
@@ -57,6 +63,8 @@ export const ResData = [
     costForTwo: "₹400 for two",
     cuisines: ["Pizzas", "Italian", "Pastas", "Desserts"],
     avgRating: 4.3,
+    quantity: 0,
+    price: 230,
   },
   {
     id: "8614",
@@ -67,6 +75,8 @@ export const ResData = [
     costForTwo: "₹350 for two",
     cuisines: ["Burgers", "American"],
     avgRating: 4.4,
+    quantity: 0,
+    price: 150,
   },
   {
     id: "128116",
@@ -77,6 +87,8 @@ export const ResData = [
     costForTwo: "₹250 for two",
     cuisines: ["Pizzas", "Pastas", "Italian", "Desserts", "Beverages"],
     avgRating: 4.1,
+    quantity: 0,
+    price: 290,
   },
   {
     id: "76225",
@@ -87,6 +99,9 @@ export const ResData = [
     costForTwo: "₹350 for two",
     cuisines: ["Salads", "Snacks", "Desserts", "Beverages"],
     avgRating: 4,
+
+    quantity: 0,
+    price: 199,
   },
   {
     id: "25823",
@@ -105,6 +120,8 @@ export const ResData = [
       "Beverages",
     ],
     avgRating: 4.2,
+    quantity: 0,
+    price: 188,
   },
   {
     id: "169835",
@@ -115,6 +132,8 @@ export const ResData = [
     costForTwo: "₹120 for two",
     cuisines: ["Ice Cream", "Desserts"],
     avgRating: 4.6,
+    quantity: 0,
+    price: 201,
   },
   {
     id: "62881",
@@ -132,6 +151,8 @@ export const ResData = [
       "Beverages",
     ],
     avgRating: 4.3,
+    quantity: 0,
+    price: 360,
   },
   {
     id: "234208",
@@ -142,6 +163,8 @@ export const ResData = [
     costForTwo: "₹400 for two",
     cuisines: ["Bakery", "Desserts"],
     avgRating: 4.6,
+    quantity: 0,
+    price: 545,
   },
   {
     id: "157768",
@@ -152,6 +175,8 @@ export const ResData = [
     costForTwo: "₹400 for two",
     cuisines: ["Biryani", "Pastas", "Punjabi", "Desserts", "Beverages"],
     avgRating: 4.3,
+    quantity: 0,
+    price: 360,
   },
   {
     id: "193479",
@@ -162,6 +187,8 @@ export const ResData = [
     costForTwo: "₹350 for two",
     cuisines: ["Sweets", "Snacks", "North Indian"],
     avgRating: 4.3,
+    quantity: 0,
+    price: 230,
   },
   {
     id: "395804",
@@ -172,6 +199,8 @@ export const ResData = [
     costForTwo: "₹600 for two",
     cuisines: ["Bakery", "Cafe", "French", "Desserts", "Continental"],
     avgRating: 4.4,
+    quantity: 0,
+    price: 170,
   },
   {
     id: "107452",
@@ -193,6 +222,8 @@ export const ResData = [
       "Sweets",
     ],
     avgRating: 4.4,
+    quantity: 0,
+    price: 100,
   },
   {
     id: "443497",
@@ -211,6 +242,8 @@ export const ResData = [
       "Biryani",
     ],
     avgRating: 4.4,
+    quantity: 0,
+    price: 299,
   },
   {
     id: "69464",
@@ -228,6 +261,8 @@ export const ResData = [
       "Ice Cream",
     ],
     avgRating: 4.2,
+    quantity: 0,
+    price: 399,
   },
   {
     id: "68578",
@@ -238,6 +273,8 @@ export const ResData = [
     costForTwo: "₹150 for two",
     cuisines: ["Ice Cream"],
     avgRating: 4.6,
+    quantity: 0,
+    price: 450,
   },
   {
     id: "17835",
@@ -255,6 +292,8 @@ export const ResData = [
       "Desserts",
     ],
     avgRating: 4.3,
+    quantity: 0,
+    price: 350,
   },
   {
     id: "27797",
@@ -265,6 +304,8 @@ export const ResData = [
     costForTwo: "₹150 for two",
     cuisines: ["Ice Cream", "Desserts"],
     avgRating: 4.7,
+    quantity: 0,
+    price: 200,
   },
 ];
 
@@ -276,6 +317,8 @@ export const ResCardData = [
     description:
       "Serves 1 | Choose your favourite Melts & Fries. Customize your satisfaction.",
     imageId: "77b13d58799f70f670be31e6fe53374e",
+    quantity: 1,
+    price: 180,
   },
   {
     id: "135320514",
@@ -284,6 +327,8 @@ export const ResCardData = [
     description:
       'Serves 1 | The perfect "Me Time" meal. Choose your favourite Melts and Fries accompanied with 1 Pepsi PET',
     imageId: "8183f4dc4fd3a1046f1e3334e061c5bf",
+    quantity: 1,
+    price: 299,
   },
   {
     id: "135320515",
@@ -292,6 +337,8 @@ export const ResCardData = [
     description:
       "Serves 1 | Choose your favourite Melts & Fries combo. Customize your satisfaction.",
     imageId: "da8429720566b8992d5c1c6bfeecdd2c",
+    quantity: 1,
+    price: 220,
   },
   {
     id: "135320517",
@@ -300,6 +347,8 @@ export const ResCardData = [
     description:
       'Serves 1 | The perfect "Me Time" meal. Choose your favourite Melts and Fries accompanied with 1 Pepsi PET',
     imageId: "aecf5902ecf7faa53aa89fda3395c989",
+    quantity: 1,
+    price: 199,
   },
   {
     id: "135320513",
@@ -308,6 +357,8 @@ export const ResCardData = [
     description:
       "Serves 1 | Choose any 2 Melts flavour. Double the flavour, double the satisfaction",
     imageId: "e6072e97754de0c6c6030103e0fb50d3",
+    quantity: 1,
+    price: 399,
   },
   {
     id: "135672212",
@@ -316,6 +367,8 @@ export const ResCardData = [
     description:
       "Serves 1 | Double the satisfaction with Cheezy Cheese Veg & Loaded BBQ Veg Melts.",
     imageId: "0b816322be7e8731246e9492e4b44b84",
+    quantity: 1,
+    price: 390,
   },
   {
     id: "135320516",
@@ -324,6 +377,8 @@ export const ResCardData = [
     description:
       "Serves 1 | Choose any 2 Melts flavour. Double the flavour, double the satisfaction",
     imageId: "e7620274ab99ba415f3e00480020cb48",
+    quantity: 1,
+    price: 450,
   },
   {
     id: "135334180",
@@ -332,6 +387,8 @@ export const ResCardData = [
     description:
       "Serves 1 | Satisfy your non veg cravings with Cheezy Cheese Chicken & Loaded Chicken BBQ Melts.",
     imageId: "3779ffaf02380c80f951a1ed2b90c997",
+    quantity: 1,
+    price: 510,
   },
   {
     id: "135334181",
@@ -340,6 +397,8 @@ export const ResCardData = [
     description:
       "Serves 1 | Satisfy your desi flavour cravings with Makhni Paneer & Chicken Tikka Keema Melts",
     imageId: "a6c351a9a53ae0c5fa2e5e401b8bf27a",
+    quantity: 1,
+    price: 490,
   },
   {
     id: "107430382",
@@ -348,5 +407,52 @@ export const ResCardData = [
     description:
       "Serves 1 | Pizza topped with our herb-infused signature pan sauce and 100% mozzarella cheese. A classic treat for all cheese lovers out there!",
     imageId: "dpventcrozvfni0lqb10",
+    quantity: 1,
+    price: 250,
+  },
+];
+
+export const Item = [
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Cakes.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029860/PC_Creative%20refresh/3D_bau/banners_new/Samosas.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rolls.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029852/PC_Creative%20refresh/3D_bau/banners_new/Momos.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029850/PC_Creative%20refresh/3D_bau/banners_new/Dosa.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1675667625/PC_Creative%20refresh/Biryani_2.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029860/PC_Creative%20refresh/3D_bau/banners_new/Sandwich.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029844/PC_Creative%20refresh/3D_bau/banners_new/Chole_Bature.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Pure_Veg.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029852/PC_Creative%20refresh/3D_bau/banners_new/Pakodas.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029847/PC_Creative%20refresh/3D_bau/banners_new/Kachori.png",
+  },
+  {
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Shakes.png",
   },
 ];

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { ResData } from "../../utils/constants";
+import ItemList from "./ItemList";
 
 const RestaurentMenu = () => {
   const { resId } = useParams();
@@ -12,8 +13,8 @@ const RestaurentMenu = () => {
   console.log("itemvalues", itemvalues);
 
   return (
-    <div className="flex justify-center pt-10">
-      <div className="w-[38rem] p-5">
+    <div className="flex justify-center pt-10 bg-Background1">
+      <div className="w-[38rem] p-5  ">
         <div className="flex justify-between items-center">
           <div>
             <h1 className="  font-bold text-lg">{itemvalues[0].name}</h1>
@@ -31,9 +32,11 @@ const RestaurentMenu = () => {
         <p className="font-thin text-[15px]">
           Additional delivery fee will be apply
         </p>
-        <div className="flex justify-center pt-5">
-          <div className="w-[38rem] ">
-            <div className=""></div>
+        <div className="flex justify-center pt-5 ">
+          <div className="w-[38rem]  ">
+            <div className="">
+              <ItemList />
+            </div>
           </div>
         </div>
 

@@ -1,57 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaCartShopping } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [loginBtn, setloginBtn] = useState("Login");
+  const [item, setItem] = useState(null);
+  const cartItem = useSelector((state) => state.items);
 
-  const Togglebtn = () => {
-    if (loginBtn === "Login") {
-      setloginBtn("Logout");
-    } else {
-      setloginBtn("Login");
-    }
-  };
+  useEffect(() => {
+    setItem(cartItem.length);
+  }, [cartItem]);
+
   return (
-    <div className="flex justify-between items-center h-auto px-6 py-0 border border-solid bg-Secondary shadow-xl">
+    <div className="flex mx-auto justify-between items-center h-auto px-20  w-[100vw] ">
       <div className="logo-contianer">
         <img
-          className="w-36 h-28"
+          className="w-34 h-20"
           src={require("../../utils/food_logo.png")}
           alt="an image of food "
         />
       </div>
-      <div className="">
-        <ul className=" flex gap-8">
-          <Link className="font-rubik text-[1.2rem] font-[400]" to={"/"}>
+      <div className=" content-center">
+        <ul className=" flex gap-8 ">
+          <Link className="font-rubik text-[1rem] font-[400] " to={"/"}>
             Home
           </Link>
-          <Link className="font-rubik text-[1.2rem] font-[400]" to={"aboutus"}>
-            About us
+          <Link className="font-rubik text-[1rem] font-[400]" to={"aboutus"}>
+            Category
           </Link>
-          <Link className="font-rubik text-[1.2rem] font-[400]" to={"services"}>
-            Services
+          <Link className="font-rubik text-[1rem] font-[400]" to={"aboutus"}>
+            Contact Us
           </Link>
-          <Link
-            className="font-rubik text-[1.2rem] font-[400]"
-            to={"testimonial"}>
-            Testimonials
-          </Link>
-          <Link className="font-rubik text-[1.2rem] font-[400]" to={"contact"}>
-            Contact us
+          <Link className="font-rubik text-[1rem] font-[400]" to={"aboutus"}>
+            Restaurents
           </Link>
         </ul>
       </div>
-      <div className="flex gap-4 items-center ">
-        <div
-          className="font-rubik text-[1.2rem] font-[400] "
-          onClick={() => {
-            Togglebtn();
-          }}>
-          {loginBtn}
-        </div>
-        <div className="font-rubik text-[1.2rem] font-[400] bg-Primary  text-white px-5 py-3 rounded-md ">
-          Register
-        </div>
+      <div className="flex justify-between gap-3">
+        <Link
+          className="font-rubik text-[1rem] font-[400] flex items-center gap-2   "
+          to={"contact"}>
+          <FaCartShopping />
+          <div className=" ">
+            <div className="flex justify-between ">
+              <p>Cart</p>
+              <p className="px-1 ">{item ? item : 0}</p>
+            </div>
+          </div>
+        </Link>
+        <Link to={"signup"}>
+          <button className="   px-2 py-1 rounded-md ">Sign In</button>
+        </Link>
       </div>
     </div>
   );

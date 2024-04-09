@@ -7,12 +7,16 @@ import RestaurentMenu from "./components/RestaurentMeuu";
 import Error from "./components/Error";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import SignUp from "./components/Forms/SignUp";
+import LogIn from "./components/Forms/LogIn";
 
 const Aboutus = lazy(() => import("./components/Aboutus"));
 
 const App = () => {
   return (
-    <div>
+    <div className=" m-0 p-0 box-content">
       <Header />
       <Outlet />
     </div>
@@ -41,6 +45,15 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
+        path: "/login",
+        element: <LogIn />,
+      },
+
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
         path: "/restaurent/:resId",
         element: <RestaurentMenu />,
       },
@@ -50,4 +63,8 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <Provider store={store}>
+    <RouterProvider router={appRouter} />
+  </Provider>
+);
