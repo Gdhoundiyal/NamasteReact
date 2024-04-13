@@ -121,7 +121,6 @@ const Body = () => {
           )}
           <BestCuisines />
           <ExploreRestaurent />
-          <Footer />
         </div>
       </div>
     </div>

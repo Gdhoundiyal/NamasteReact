@@ -23,14 +23,14 @@ const ItemList = () => {
                 <div className=" font-bold text-l border-b-border">
                   {item.name}
                 </div>
-                <div className="h-24 w-24 overflow-hidden bg-black rounded-xl  p-2">
+                <div className="h-24 w-24 overflow-hidden  rounded-xl  p-2">
                   <img
                     className="h-full w-full object-cover rounded-xl"
                     src={img_url + item.imageId}
                   />
                 </div>
                 <button
-                  className="absolute top-[6rem] right-9 text-m bg-border p-[5px]  rounded-lg text-white"
+                  className="absolute top-[6.4rem] right-9 text-m bg-border p-[5px]  bg-Background1  rounded-lg text-black"
                   onClick={() => addItems(item)}>
                   Add+
                 </button>

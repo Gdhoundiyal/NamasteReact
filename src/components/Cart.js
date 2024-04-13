@@ -9,8 +9,9 @@ import {
 } from "../features/cartSlice";
 import axios from "axios";
 import { useState } from "react";
+import { title } from "process";
 
-const Contact = () => {
+const Cart = () => {
   const items = useSelector((state) => state.items);
   const totalprice = useSelector((state) => state.totalPrice);
   const [product, setproduct] = useState({
@@ -50,6 +51,7 @@ const Contact = () => {
       amount: totalprice,
       currency: data.currency,
       order_id: data.id,
+      description: "Test Payment",
       handler: async () => {
         try {
           const verifyUrl = "http://localhost:8080/api/payment/verify";
@@ -61,7 +63,8 @@ const Contact = () => {
         }
       },
       theme: {
-        color: "#3399cc",
+        color: "#878585",
+        title: "Namste React",
       },
     };
     const rzrpay = new window.Razorpay(options);
@@ -103,17 +106,17 @@ const Contact = () => {
               </div>
               {items.map((item) => {
                 return (
-                  <div className="flex justify-evenly">
+                  <div className="flex justify-evenly ">
                     <div className=" h-auto  mt-1   p-5 flex items-center justify-center ">
-                      <div className="h-auto   w-[36rem]  bg-white mt-1   p-3  flex items-center justify-between">
+                      <div className="h-auto   w-[36rem]  mt-1   p-3  flex items-center justify-between ">
                         <div>
                           {/* <div>{item.id}</div> */}
-                          <p className="text-sm  w-[18rem]">{item.Name}</p>
+                          <p className="text-[17px]  w-[18rem]">{item.Name}</p>
                           <div className="flex items-center justify-between mt-3 ">
                             <p>Rs.{item.price}</p>
                             <div className="flex items-center gap-3">
                               <p
-                                className="px-1 rounded-md bg-border text-white text-sm"
+                                className="px-1 rounded-md border border-Borders text-black text-sm"
                                 onClick={() => Increasevalue(item)}>
                                 +
                               </p>
@@ -121,7 +124,7 @@ const Contact = () => {
                                 {item.quantity}
                               </p>
                               <p
-                                className="px-1 rounded-md bg-border text-white text-sm"
+                                className="px-1 rounded-md border border-Borders text-black text-sm"
                                 onClick={() => decreasevalue(item)}>
                                 {" "}
                                 -
@@ -129,7 +132,7 @@ const Contact = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="h-20 w-20 overflow-hidden bg-black rounded-xl  p-2">
+                        <div className="h-28 w-28 overflow-hidden rounded-xl  p-2">
                           <img
                             className="h-full w-full object-cover rounded-xl"
                             src={img_url + item.imageId}
@@ -139,7 +142,7 @@ const Contact = () => {
                     </div>
                     <div className="flex items-center">
                       <button
-                        className="p-2  bg-border rounded-lg text-white"
+                        className="p-2   rounded-lg text-white bg-Primary"
                         onClick={() => deleteitem(item)}>
                         Delete
                       </button>
@@ -166,7 +169,7 @@ const Contact = () => {
                   <div className="flex  justify-center items-center mt-5 rounded-lg">
                     <button
                       onClick={() => displayRazorpay()}
-                      className=" p-4 border border-Background2">
+                      className=" px-4 py-2 border border-Background2 rounded-lg bg-Primary text-white">
                       Buy Now
                     </button>
                   </div>
@@ -200,4 +203,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Cart;

@@ -33,6 +33,7 @@ module.exports = {
       Heading: "#535665",
       catogary: "#42444A",
       formbackground: "#37718E",
+      black: "#000",
     },
     placeholderColor: {
       primary: "#6C6F72",

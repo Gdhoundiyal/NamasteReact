@@ -25,13 +25,15 @@ const Header = () => {
           <Link className="font-rubik text-[1rem] font-[400] " to={"/"}>
             Home
           </Link>
-          <Link className="font-rubik text-[1rem] font-[400]" to={"aboutus"}>
-            Category
+          <Link className="font-rubik text-[1rem] font-[400]" to={"offers"}>
+            Offers
           </Link>
-          <Link className="font-rubik text-[1rem] font-[400]" to={"aboutus"}>
-            Contact Us
+          <Link className="font-rubik text-[1rem] font-[400]" to={"Help"}>
+            Help
           </Link>
-          <Link className="font-rubik text-[1rem] font-[400]" to={"aboutus"}>
+          <Link
+            className="font-rubik text-[1rem] font-[400]"
+            to={"restaurents"}>
             Restaurents
           </Link>
         </ul>
@@ -39,7 +41,7 @@ const Header = () => {
       <div className="flex justify-between gap-3">
         <Link
           className="font-rubik text-[1rem] font-[400] flex items-center gap-2   "
-          to={"contact"}>
+          to={"cart"}>
           <FaCartShopping />
           <div className=" ">
             <div className="flex justify-between ">

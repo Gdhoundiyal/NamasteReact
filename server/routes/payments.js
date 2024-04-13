@@ -43,8 +43,10 @@ router.post("/verify", async (req, res) => {
       .digest("hex");
 
     if (razorpay_signature === expectedSign) {
+      console.log("payment succesful");
       return res.status(200).json({ message: "Payment verified Successfully" });
     } else {
+      console.log("Invalid Signature ");
       return res.status(400).json({ message: "Invalid Signature Sent!!!" });
     }
   } catch (error) {

@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import Contact from "./components/Contact";
 import RestaurentMenu from "./components/RestaurentMeuu";
 import Error from "./components/Error";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
@@ -11,14 +10,20 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import SignUp from "./components/Forms/SignUp";
 import LogIn from "./components/Forms/LogIn";
+import Cart from "./components/Cart";
+import Footer from "./components/footer";
+import Offers from "./Header/offers";
+import HeaderRestaurents from "./Header/headerRestaurents";
+import Help from "./Header/Help";
 
-const Aboutus = lazy(() => import("./components/Aboutus"));
+const Aboutus = lazy(() => import("./Header/Help"));
 
 const App = () => {
   return (
     <div className=" m-0 p-0 box-content">
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 };
@@ -33,16 +38,17 @@ const appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "/aboutus",
+        // Suspense is used to get the data when needed
+        path: "/Help",
         element: (
           <Suspense>
-            <Aboutus />
+            <Help />
           </Suspense>
         ),
       },
       {
-        path: "/contact",
-        element: <Contact />,
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/login",
@@ -56,6 +62,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurent/:resId",
         element: <RestaurentMenu />,
+      },
+      {
+        path: "/offers",
+        element: <Offers />,
+      },
+      {
+        path: "/restaurents",
+        element: <HeaderRestaurents />,
       },
     ],
     errorElement: <Error />,
