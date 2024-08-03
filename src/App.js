@@ -1,29 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/Header";
-import Body from "./components/Body";
-import RestaurentMenu from "./components/RestaurentMeuu";
-import Error from "./components/Error";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import { lazy, Suspense } from "react";
-import { Provider } from "react-redux";
-import { store } from "./redux/store";
-import SignUp from "./components/Forms/SignUp";
-import LogIn from "./components/Forms/LogIn";
-import Cart from "./components/Cart";
-import Footer from "./components/footer";
-import Offers from "./Header/offers";
-import HeaderRestaurents from "./Header/headerRestaurents";
-import Help from "./Header/Help";
+import Header from "./Components/Header";
+import Body from "./Components/Body";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import About from "./Components/about";
+import Contactus from "./Components/contactus";
+import Error from "./Components/error";
+import RestauranMenu from "./Components/RestaurentMenu";
+import EditorComponent from "./Components/Editor";
 
-const Aboutus = lazy(() => import("./Header/Help"));
-
-const App = () => {
+const AppLayout = () => {
   return (
-    <div className=" m-0 p-0 box-content">
+    <div>
       <Header />
-      <Outlet />
-      <Footer />
+      <EditorComponent/>
+      {/* <Outlet /> */}
     </div>
   );
 };
@@ -31,45 +22,23 @@ const App = () => {
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <AppLayout />,
     children: [
       {
         path: "/",
         element: <Body />,
       },
       {
-        // Suspense is used to get the data when needed
-        path: "/Help",
-        element: (
-          <Suspense>
-            <Help />
-          </Suspense>
-        ),
+        path: "/about",
+        element: <About />,
       },
       {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/login",
-        element: <LogIn />,
-      },
-
-      {
-        path: "/signup",
-        element: <SignUp />,
+        path: "/contact",
+        element: <Contactus />,
       },
       {
         path: "/restaurent/:resId",
-        element: <RestaurentMenu />,
-      },
-      {
-        path: "/offers",
-        element: <Offers />,
-      },
-      {
-        path: "/restaurents",
-        element: <HeaderRestaurents />,
+        element: <RestauranMenu />,
       },
     ],
     errorElement: <Error />,
@@ -77,8 +46,5 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <Provider store={store}>
-    <RouterProvider router={appRouter} />
-  </Provider>
-);
+
+root.render(<RouterProvider router={appRouter} />);
