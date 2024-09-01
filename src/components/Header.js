@@ -8,7 +8,7 @@ const Header = () => {
   const cartItem = useSelector((state) => state.items);
 
   useEffect(() => {
-    setItem(cartItem.length);
+    setItem(cartItem.length); 
   }, [cartItem]);
 
   return (
@@ -16,9 +16,9 @@ const Header = () => {
       <div className="logo-contianer">
         <img
           className="w-34 h-20"
-          src={require("../../utils/food_logo.png")}
+          src={require("../../public/logoDark.png")}
           alt="an image of food "
-        />
+        />      
       </div>
       <div className=" content-center">
         <ul className=" flex gap-8 ">
